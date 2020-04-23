@@ -7,6 +7,7 @@ import React from 'react';
 
 import Todo from './Todo';
 
+
 @observer
 class MobxTodoList extends React.Component {
     
@@ -22,28 +23,17 @@ class MobxTodoList extends React.Component {
    
     render(){
         const {TodoList, filterTodos, changeSelectedFiltertype} = MobxTodoStore;
-        let filteredTodos = filterTodos(); 
+        console.log('TodoList:',TodoList)
+        let filteredTodos = filterTodos; 
+        console.log('filtered',filteredTodos)
     return(
       <div>
         <TodoInput addTodo={this.addTodo}/> 
-        <div>
-          {
-            filteredTodos.map(todo => {
-            console.log(todo,'filtered')
-               return <Todo 
-                        removeToDo={this.removeToDo}
-                        id = {todo.id}
-                        key={todo.id}
-                        todo = {todo}
-                        isChecked={todo.isChecked}
-                        title={todo.title}
-                        />;
-           })   
-          }
-        </div>
-        <Footer  todosLeft={this.todosLeft}
-          changeSelectedFiltertype={changeSelectedFiltertype}
-        />
+      
+             <Footer  todosLeft={this.todosLeft}
+                      changeSelectedFiltertype={changeSelectedFiltertype}
+                    />
+          
       </div>
     );
     }
@@ -51,3 +41,23 @@ class MobxTodoList extends React.Component {
 }
 
 export default MobxTodoList;
+
+
+
+
+        //   
+        //     TodoList.map(todo => {
+            
+        //               <Todo 
+        //                 removeToDo={this.removeToDo}
+        //                 id = {todo.id}
+        //                 key={todo.id}
+        //                 todo = {todo}
+        //                 isChecked={todo.isChecked}
+        //                 title={todo.title}
+        //                 />
+        //   })   
+        //   }
+        //</div>
+
+       

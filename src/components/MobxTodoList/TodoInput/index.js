@@ -27,7 +27,6 @@ class TodoInput extends React.Component {
      return(
         <form onSubmit={this.handleOnSubmit}>
             <input
-            
                 type="text" 
                 style={{background:"lightgray",margin:"50px"}}
                 onChange={this.onChange}

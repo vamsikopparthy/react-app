@@ -5,6 +5,9 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@ib/api": "1.0.8",
+    "@ib/api-constants": "1.0.8",
+    "@ib/mobx-promise": "1.0.8",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -17,6 +20,7 @@
     "babel-plugin-macros": "^2.8.0",
     "mobx": "5.15.0",
     "mobx-logger": "^0.7.1",
+    "apisauce": "1.1.1",
     "mobx-react": "6.1.4",
     "postcss-cli": "^7.1.0",
     "react": "^16.13.0",
