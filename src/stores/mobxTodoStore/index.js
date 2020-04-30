@@ -32,14 +32,14 @@ class MobxTodoStore{
     
     @action.bound
     setTodosApiError(error) {
-        this.getUsersApiError = error
+        this.getTodosApiError = error
     }
     
     @action.bound
     setTodosApiStatus(apiStatus){
         this.getUsersApiStatus = apiStatus
     }
-    
+
     @action.bound
     getUsersApi() {
         const todosPromise = this.UserTodoService.getTodosApi();

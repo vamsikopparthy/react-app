@@ -1,9 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,Redirect } from "react-router-dom";
+
 import logo from "../../logo.svg";
 
-function App() {
-  return (
+class App extends React.Component {
+  
+  gotoGridScreenIfLoggedIn = () => {
+    return (
+      <Redirect 
+      to={{
+        pathname: '/grid-memory-game',
+      }}
+      />
+      );
+  }
+  render() {
+      return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -22,9 +34,11 @@ function App() {
         <Link to="/page-1">Page 1</Link>
         <Link to="/mobxTodoStore">mobxTodoS
         tore</Link>
+        <Link to="/ProductStore">E Commerce App</Link>
       </header>
     </div>
   );
+}
 }
 
 export default App;

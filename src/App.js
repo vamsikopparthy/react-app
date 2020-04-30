@@ -1,15 +1,17 @@
-import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/HomePage";
 import Page1 from "./components/Page1";
 import MobxTodoList from './components/MobxTodoList';
 import UserPage from './components/UsersPage';
-import {Provider} from 'mobx-react' 
+import {Provider} from 'mobx-react'; 
 import "./App.css";
-import stores from './stores'
+import stores from './stores';
+import React from 'react';
+import ProductPage from './Ecommerce-App/Components/clothesDashboard';
 
-const App = () => {
+class App extends React.Component {
+  render() {
   return (
     <Provider {...stores} >
     <Router basename={process.env.PUBLIC_URL}>
@@ -21,6 +23,9 @@ const App = () => {
         <Route exact path="/mobxTodoStore">
           <MobxTodoList />
         </Route>
+        <Route exact path="/ProductStore">
+           <ProductPage />
+        </Route>
         <Route path="/">
           <HomePage />
         </Route>
@@ -28,6 +33,7 @@ const App = () => {
     </Router>
     </Provider>
   );
-};
+  }
+}
 
 export default App;
