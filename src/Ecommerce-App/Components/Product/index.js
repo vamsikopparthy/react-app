@@ -12,7 +12,7 @@ class Product extends React.Component {
       // console.log(this.props.eachProduct);
        return(
          <div style={{width: "300px"}}>
-         <p style={{border: "1px black",width: "120px",position:"absolute",padding:"5px",color:"white",backgroundColor:"black"}}>isFreeShipping</p>
+         {eachProduct.isFreeShipping === true ? <p style={{border: "1px black",width: "120px",position:"absolute",marginLeft:"100px",padding:"5px",color:"white",backgroundColor:"black"}}>FreeShipping</p>: null}
          <img style={{height:"200px"}} src={imageURL} />
          <p>{title}</p>
          <div style={{display:"flex"}}>

@@ -9,6 +9,9 @@ import "./App.css";
 import stores from './stores';
 import React from 'react';
 import ProductPage from './Ecommerce-App/Components/clothesDashboard';
+import EnhancedAdd from './common/components/add';
+import PracticeAdvancedConceptsRoute  from './common/routes/PracticeAdvancedConcepts';
+
 
 class App extends React.Component {
   render() {
@@ -26,10 +29,16 @@ class App extends React.Component {
         <Route exact path="/ProductStore">
            <ProductPage />
         </Route>
+        <Route path="/EnhancedAdd">
+          <EnhancedAdd />
+        </Route>
+        <Route path="/PracticeAdvancedConceptsRoute">
+          <PracticeAdvancedConceptsRoute />
+        </Route>
         <Route path="/">
           <HomePage />
         </Route>
-      </Switch>
+        </Switch>
     </Router>
     </Provider>
   );

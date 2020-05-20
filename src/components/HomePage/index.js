@@ -35,6 +35,8 @@ class App extends React.Component {
         <Link to="/mobxTodoStore">mobxTodoS
         tore</Link>
         <Link to="/ProductStore">E Commerce App</Link>
+        <Link to="/EnhancedAdd">EnhancedAdd</Link>
+        <Link to="/PracticeAdvancedConceptsRoute">PracticeAdvancedConcepts</Link>
       </header>
     </div>
   );

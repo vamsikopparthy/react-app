@@ -17,17 +17,19 @@ class ProductStore {
     productsApiService;
     @observable getProductListApiStatus;
     orginalProductList;
+    OrginalProductList;
     @observable geteCommerceApiError;
     sizebuttonFilter;
     sizes;
     
     constructor() {
         this.productList = [];
-        this.sizeFilter = [{size:'XS',isClicked:false},{size:'S',isClicked:false},{size:'L',isClicked:false},{size:'Xl',isClicked:false},{size:'XXL',isClicked:false}];
+        this.sizeFilter = [{size:'XS',isClicked:false},{size:'S',isClicked:false},{size:'M',isClicked:false},{size:'L',isClicked:false},{size:'Xl',isClicked:false},{size:'XXL',isClicked:false}];
         //this.sizeFilter = [];
         this.sortBy = "Select";
         this.init();
         this.orginalProductList = [];
+        this.OrginalProductList = [];
         this.sizes = [];
     }
     
@@ -45,6 +47,8 @@ class ProductStore {
         const productModel = new ProductModel(eachItem);
         return productModel});
         this.orginalProductList = this.productList.slice(0);
+        this.OriginalProductList = this.productList.slice(0);
+        console.log("originalProductList:",this.orginalProductList)
         }
     
     @action.bound
@@ -70,20 +74,34 @@ class ProductStore {
         
        // this.sizeFilter.filter(eachObject => each)
         //this.sizeFilter.push(selectedSize)
+        
+        
+          this.sizeFilter.filter((eachObject) => {
+            if(eachObject.size === selectedSize) {
+               eachObject.isClicked = !(eachObject.isClicked)
+               return eachObject
+            }})
+        
         console.log("sizeFilter",this.sizeFilter);
         
-        this.sizeFilter = this.sizeFilter.find(sizeObject => ((sizeObject.size === selectedSize)? (sizeObject.isChecked = !(sizeObject.isChecked)) : null)
+        this.sizes = this.sizeFilter.filter(eachObject => (eachObject.isClicked));
         
-        this.sizes = this.sizeFilter.filter(eachObject => (eachObject.size === selectedSize));
-        
-        this.sizes = this.sizes.filter(eachSize => (eachSize.isClicked === true));
+        //this.sizes = this.sizes.filter(eachSize => (eachSize.isClicked === true));
         
         console.log("sizes",this.sizes);
         // this.sizebuttonFilter.filter(eachSize => this.productList.some())
         
-        this.productList = this.orginalProductList.filter(product => this.sizeFilter.some(eachSize => product.availableSizes.indexOf(eachSize) !== -1));
+        //this.productList = this.orginalProductList.filter(product => this.sizeFilter.some(eachSize => product.availableSizes.indexOf(eachSize) !== -1));
         
-        //console.log(this.productList);
+        //this.productList = this.orginalProductList.filter(product => this.sizeFilter.some(eachSize => product.availableSizes.indexOf(eachSize) !== -1));
+        
+        this.productList = this.orginalProductList.filter(product => this.sizes.some(eachSize => product.availableSizes.indexOf(eachSize.size) !== -1));
+        
+        if(this.productList.length === 0) {
+            this.productList = this.OriginalProductList;
+        }
+        
+        console.log("productList:",this.productList);
     }
     
     @action.bound  
