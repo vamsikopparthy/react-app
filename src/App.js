@@ -10,8 +10,12 @@ import stores from './stores';
 import React from 'react';
 import ProductPage from './Ecommerce-App/Components/clothesDashboard';
 import EnhancedAdd from './common/components/add';
-import PracticeAdvancedConceptsRoute  from './common/routes/PracticeAdvancedConcepts';
+import PracticeAdvancedConceptsRoute  from './common/routes/PracticeAdvancedConcepts/PracticeAdvancedConcepts';
+import MouseTracker from './common/components/MouseTracker';
 
+import MouseFunctionality from './common/components/MouseFunctionality';
+
+import Button from './components/button/button.stories';
 
 class App extends React.Component {
   render() {
@@ -35,6 +39,16 @@ class App extends React.Component {
         <Route path="/PracticeAdvancedConceptsRoute">
           <PracticeAdvancedConceptsRoute />
         </Route>
+        <Route path="/Mouse">
+          <MouseTracker />
+        </Route>
+        <Route path="/Button">
+          <Button />
+        </Route>
+        <Route path="/MouseFunctionality">
+          <MouseFunctionality />
+        </Route>
+        
         <Route path="/">
           <HomePage />
         </Route>

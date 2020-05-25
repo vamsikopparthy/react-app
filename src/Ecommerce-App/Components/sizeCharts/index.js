@@ -23,9 +23,16 @@ class SizeFilter extends React.Component {
           <button style={{border:"1px solid black",borderRadius:"30px",margin:"10px",padding:"5px"}} value="XL">XL</button>
           <button style={{border:"1px solid black",borderRadius:"30px",margin:"10px",padding:"5px"}} value="XXL">XXL</button>
         </div>  
+        
         );
     }
 }
+
+      export const AddEventButtonComponent = (props) => {
+          const { children, onClickAddEvent } = props;
+          return <button onClick={onClickAddEvent}>{onClickAddEvent}</button>
+        }
+        
 
 
 export default SizeFilter;

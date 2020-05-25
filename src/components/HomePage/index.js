@@ -36,6 +36,9 @@ class App extends React.Component {
         tore</Link>
         <Link to="/ProductStore">E Commerce App</Link>
         <Link to="/EnhancedAdd">EnhancedAdd</Link>
+         <Link to="/Mouse">Mouse</Link>
+          <Link to="/Button">Button</Link>
+         <Link to="/MouseFunctionality">MouseFunctionality</Link>
         <Link to="/PracticeAdvancedConceptsRoute">PracticeAdvancedConcepts</Link>
       </header>
     </div>

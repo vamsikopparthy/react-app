@@ -4,7 +4,7 @@ import CollapseExpand from '../.././components/CollapseExpand';
 
 import Toggle from '../.././components/ViewEditToggle';
 
-
+import Maxwidth from '../.././components/WindowMaxwidth';
 
 class PracticeAdvancedConceptsRoute extends React.Component {
    
@@ -13,6 +13,7 @@ class PracticeAdvancedConceptsRoute extends React.Component {
            <div>
               <CollapseExpand />
               <Toggle />
+              <Maxwidth />
            </div>
            );
    } 
